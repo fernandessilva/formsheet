@@ -11,15 +11,15 @@
     form {
         display: flex;
         flex-direction: column;
-        background: $white;
+        background: white;
         gap: 0.5rem;
         padding: 3em;
         width: 500px;
         margin: 0 auto;
         height: 320px;
         border-radius: 20px;
-        border-left: 1px solid $white;
-        border-top: 1px solid $white;
+        border-left: 1px solid white;
+        border-top: 1px solid white;
         backdrop-filter: blur(10px);
         box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
         text-align: center;
@@ -52,6 +52,11 @@
         border-color: #a01818;
         font-size: 9px;
         height: 13px;
+    }
+
+    class-error{
+        border-color: red;
+    
     }
 
     button {

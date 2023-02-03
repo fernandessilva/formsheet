@@ -16,7 +16,7 @@ form.addEventListener("submit", (e) => {
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector('.error');
+  const errorDisplay = inputControl.nextElementSibling;
 
   errorDisplay.innerText = message;
   inputControl.classList.add("error");
@@ -24,15 +24,15 @@ const setError = (element, message) => {
 
 }
 const setSucess = element => {
-  const inputControl = element.parentElement
-  const errorDisplay = inputControl.querySelector('.error');
+  const inputControl = element.parentElement;
+  const errorDisplay = inputControl.nextElementSibling;
 
-  errorDisplay.innerText = '';
+  errorDisplay.innerText = ''
   inputControl.classList.add('success');
   inputControl.classList.remove('error');
 };
 const emailValido = email => {
-  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
 // using trim to remove empyt spaces after strings
@@ -49,11 +49,15 @@ const validarInputs = () => {
     setSucess(username);
   }
 
+
   if (emailValue === "") {
     setError(email, "O email é obrigatório");
-  } else if (emailValido(emailValue)) {
-    setError(email, "O email inválido")
-  } else { setSucess(email); }
+  } 
+  // Else if (emailValido(emailValue)) {
+  //   setError(email, "Email inválido")
+   else { setSucess(email); }
+
+
 
   if (passwordValue === "") {
     setError(password, "A senha é obrigatória");
@@ -64,6 +68,8 @@ const validarInputs = () => {
     setSucess(password);
   }
 
+
+
   if (passwordVerificationValue === "") {
     setError(passwordVerification, "A senha é obrigatória");
   } else if (passwordVerificationValue !== passwordValue) {
@@ -72,6 +78,7 @@ const validarInputs = () => {
   else {
     setSucess(passwordVerification);
   }
+
 
 };
 
