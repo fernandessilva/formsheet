@@ -1,31 +1,11 @@
-{
-        font-family: Verdana;
-        box-sizing: border-box;
-    }
-
-    h1 {
-        text-align:justify;
-    }
-
     body {
-        padding: 5em 50em;
+        background: linear-gradient(to margin-bottom, #FFFFFF, #ccc);
     }
 
     label {
         font-weight: bold;
         margin-bottom: 5px;
-        text-align:justify;
-
-    }
-
-    input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: large;
-
-
+        text-align: justify;
     }
 
     form {
@@ -45,6 +25,33 @@
         text-align: center;
         position: relative;
         transition: all 0.2s ease-in-out;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: large;
+    }
+
+    input-control {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input-control.success input {
+        border-color: #3dc43d;
+    }
+
+    input-control.error input {
+        border-color: #a01818;
+    }
+
+    input-control.error {
+        border-color: #a01818;
+        font-size: 9px;
+        height: 13px;
     }
 
     button {
