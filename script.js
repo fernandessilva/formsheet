@@ -8,10 +8,14 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   validarInputs();
-
+debugger
   const formData = new FormData(form)
   const data = Object.fromEntries(formData);
-  console.log(data)
+  console.log(data) 
+  const JsonData =  JSON.stringify(data)
+  console.log(JsonData)
+  
+  
 });
 
 const setError = (element, message) => {
